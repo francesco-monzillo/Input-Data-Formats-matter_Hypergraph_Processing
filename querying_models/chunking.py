@@ -378,7 +378,7 @@ def return_chunks_elements(text, Structure = -1, CSV = False, KG = False, METADA
 
             print(dimension)
 
-            text = "dimension: " + text[0: len(dimension)].strip() + "(score). Metrics involved: "# + text[len(dimension):]
+            text = "This is a dimension in this dataset. dimension: " + text[0: len(dimension)].strip() + "(score). Metrics involved: "# + text[len(dimension):]
 
             # name of dimension string
 

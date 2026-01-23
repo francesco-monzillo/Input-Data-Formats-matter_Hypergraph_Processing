@@ -65,20 +65,20 @@ relevant_chunks = [_ for _ in range(len(representations_list))]
 sub_folder = "better_embeddings"
 
 # Save vector stores locally
-# for i, wrapper in enumerate(vectorstore_wrappers):
+for i, wrapper in enumerate(vectorstore_wrappers):
 
-#     if i != 1:
-#         continue
+    if i != 2:
+        continue
 
-#     if (sub_folder != ""):
-#         vectorstore_wrappers[i] = chunking.buildVectorStoreObject(chunks_for_each_repr[i], embeddings= "GEMINI", maximum_tokens_for_embedding_request = 30000, Structure = i, CSV = True if i == 0 else False, KG = True if i == 1 else False, Metadata = True if i == 2 else False)
-#     else:
-#         vectorstore_wrappers[i] = chunking.buildVectorStoreObject(chunks_for_each_repr[i], embeddings= "GEMINI")
-#     #for j, vectorstore in enumerate(vectorstore_wrappers[i]):
-#     if (sub_folder != ""):
-#         vectorstore_wrappers[i].save_local(f"./baselines_vectorstores/{documentation_path}/{sub_folder}/vectorstore_{i}/part_1")
-#     else:
-#         vectorstore_wrappers[i].save_local(f"./baselines_vectorstores/{documentation_path}/weakened_embeddings/vectorstore_{i}/part_1")
+    if (sub_folder != ""):
+        vectorstore_wrappers[i] = chunking.buildVectorStoreObject(chunks_for_each_repr[i], embeddings= "GEMINI", maximum_tokens_for_embedding_request = 30000, Structure = i, CSV = True if i == 0 else False, KG = True if i == 1 else False, Metadata = True if i == 2 else False)
+    else:
+        vectorstore_wrappers[i] = chunking.buildVectorStoreObject(chunks_for_each_repr[i], embeddings= "GEMINI")
+    #for j, vectorstore in enumerate(vectorstore_wrappers[i]):
+    if (sub_folder != ""):
+        vectorstore_wrappers[i].save_local(f"./baselines_vectorstores/{documentation_path}/{sub_folder}/vectorstore_{i}/part_1")
+    else:
+        vectorstore_wrappers[i].save_local(f"./baselines_vectorstores/{documentation_path}/weakened_embeddings/vectorstore_{i}/part_1")
 
 
 # Load vector stores from local directory
@@ -134,7 +134,7 @@ with open("./questions/questions.tsv", "r") as f:
                 for i, representation in enumerate(representations_list):
                     good_ending = False
 
-                    if(i == 0):
+                    if(i != 2):
                         continue
 
                     while not good_ending:
@@ -161,7 +161,7 @@ with open("./questions/questions.tsv", "r") as f:
                                 maximum_tokens = 75000
                                 chunks_addition = 5
                             else:
-                                maximum_tokens = 100000
+                                maximum_tokens = 90000
                                 chunks_addition = 1
 
                             stop = False

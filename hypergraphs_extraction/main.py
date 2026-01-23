@@ -419,6 +419,8 @@ def process_file_unique_hypergraph(file_paths, metrics_for_each_dataset, stop = 
                 add_properties_of_metrics(hypergraph, to_build_hierarchy=True)
             else:
                 add_properties_of_metrics(hypergraph)
+                
+            print("Number of nodes in hypergraph ", i, ": ", len(hypergraph.nodes), " Number of edges: ", len(hypergraph.edges))
 
         return [H_normal, H_time_label, H_measure_label, H_kg_label, H_measure_value_label]
 
