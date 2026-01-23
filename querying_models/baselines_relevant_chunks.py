@@ -161,7 +161,7 @@ with open("./questions/questions.tsv", "r") as f:
                                 maximum_tokens = 75000
                                 chunks_addition = 5
                             else:
-                                maximum_tokens = 98000
+                                maximum_tokens = 85000
                                 chunks_addition = 1
 
                             stop = False
