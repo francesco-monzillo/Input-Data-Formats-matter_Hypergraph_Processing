@@ -22,7 +22,19 @@ The code and data used to generate our 5 hypergraphs (4-uniform, Time-labeled, M
 
 `./hypergraphs_extraction`
 
-Documentation and all the weekly quality assessment data can be found in `./hypergraphs_extraction/documentation` and `./hypergraphs_extraction/Weekly_Data`, respectively 
+Documentation and all the weekly quality assessment data can be found in `./hypergraphs_extraction/documentation` and `./hypergraphs_extraction/Weekly_Data`, respectively.
+
+---
+
+### Querying our selected Large Language Models (LLMs) using the standard OpenAI unified interface
+
+The code used to create the prompts and store responses, for each representation, is available in the following directory:
+
+`./querying_models`
+
+Inside `./querying_models/baselines_relevant_chunks.py` and `./querying_models/hypergraphs_relevant_chunks.py` can be used for baselines (Free-text, CSV and KG) and Hypergraphs, respectively.
+
+---
 
 ### Human Evaluation Results
 
